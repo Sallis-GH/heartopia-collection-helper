@@ -80,7 +80,7 @@ export function InsectsTab({ caughtState, onToggleStar, progress }: InsectsTabPr
 
   return (
     <div className="space-y-5">
-      <ProgressBar caught={progress.caught} total={progress.total} label="Insect Catching Progress" />
+      <ProgressBar caught={progress.caught} total={progress.total} label="Insect Catching Progress" category="insects" />
       <SearchAndFilters
         filters={filters}
         onFiltersChange={setFilters}

@@ -45,7 +45,7 @@ export function TabBar({ activeTab, onTabChange, getProgress }: TabBarProps) {
                   {CATEGORY_LABELS[tab]}
                 </span>
               </span>
-              <ProgressBar caught={progress.caught} total={progress.total} compact />
+              <ProgressBar caught={progress.caught} total={progress.total} compact category={tab} />
             </button>
           )
         })}

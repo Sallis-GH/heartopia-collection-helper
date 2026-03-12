@@ -104,7 +104,7 @@ export function CookingTab({ caughtState, onToggleStar, progress }: CookingTabPr
 
   return (
     <div className="space-y-5">
-      <ProgressBar caught={progress.caught} total={progress.total} label="Cooking Progress" />
+      <ProgressBar caught={progress.caught} total={progress.total} label="Cooking Progress" category="cooking" />
       <SearchAndFilters
         filters={filters}
         onFiltersChange={setFilters}

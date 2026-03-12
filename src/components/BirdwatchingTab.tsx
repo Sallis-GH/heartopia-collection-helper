@@ -80,7 +80,7 @@ export function BirdwatchingTab({ caughtState, onToggleStar, progress }: Birdwat
 
   return (
     <div className="space-y-5">
-      <ProgressBar caught={progress.caught} total={progress.total} label="Birdwatching Progress" />
+      <ProgressBar caught={progress.caught} total={progress.total} label="Birdwatching Progress" category="birdwatching" />
       <SearchAndFilters
         filters={filters}
         onFiltersChange={setFilters}

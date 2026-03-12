@@ -80,7 +80,7 @@ export function FishingTab({ caughtState, onToggleStar, progress }: FishingTabPr
 
   return (
     <div className="space-y-5">
-      <ProgressBar caught={progress.caught} total={progress.total} label="Fishing Progress" />
+      <ProgressBar caught={progress.caught} total={progress.total} label="Fishing Progress" category="fishing" />
       <SearchAndFilters
         filters={filters}
         onFiltersChange={setFilters}

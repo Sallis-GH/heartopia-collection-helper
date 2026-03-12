@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import type { Category } from '../types'
 import { CelebrationEffect } from './CelebrationEffect'
 
 interface ProgressBarProps {
@@ -6,9 +7,10 @@ interface ProgressBarProps {
   total: number
   label?: string
   compact?: boolean
+  category?: Category
 }
 
-export function ProgressBar({ caught, total, label, compact }: ProgressBarProps) {
+export function ProgressBar({ caught, total, label, compact, category }: ProgressBarProps) {
   const pct = total > 0 ? (caught / total) * 100 : 0
   const prevPctRef = useRef(pct)
   const [showCelebration, setShowCelebration] = useState(false)
@@ -63,6 +65,7 @@ export function ProgressBar({ caught, total, label, compact }: ProgressBarProps)
         <div className="progress-bar-track w-20 h-1.5">
           <div
             className="progress-bar-fill h-full"
+            data-category={category}
             style={{ width: mounted ? `${pct}%` : '0%' }}
           />
         </div>
@@ -89,6 +92,7 @@ export function ProgressBar({ caught, total, label, compact }: ProgressBarProps)
       <div className="progress-bar-track w-full h-3.5">
         <div
           className="progress-bar-fill h-full"
+          data-category={category}
           style={{ width: mounted ? `${pct}%` : '0%' }}
         />
       </div>

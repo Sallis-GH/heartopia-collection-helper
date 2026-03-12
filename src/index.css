@@ -35,7 +35,12 @@
   --color-header-border: linear-gradient(90deg, var(--color-accent-gold), var(--color-accent-sage), var(--color-accent-lavender), var(--color-accent-pink));
 
   --color-progress-track: #E0D5C4;
-  --color-progress-fill: linear-gradient(90deg, var(--color-accent-sage), #8DB87E, var(--color-accent-gold));
+  --color-progress-fill: linear-gradient(90deg, #A07A20, #C08B30, #DAAA50);
+  --progress-fill-fishing: linear-gradient(90deg, #6858A0, #9485C2, #B4A4D6);
+  --progress-fill-gardening: linear-gradient(90deg, #4A7A58, #6B9F7E, #8CBEA0);
+  --progress-fill-cooking: linear-gradient(90deg, #A84C38, #C4644E, #E08A70);
+  --progress-fill-birdwatching: linear-gradient(90deg, #9A6E1E, #C08B30, #DAAA50);
+  --progress-fill-insects: linear-gradient(90deg, #B85070, #D4728C, #EA98B0);
 
   /* Badge colors */
   --badge-sunny-bg: #FFF8E7;
@@ -126,7 +131,12 @@
   --color-header-border: linear-gradient(90deg, var(--color-accent-gold), var(--color-accent-sage), var(--color-accent-lavender), var(--color-accent-pink));
 
   --color-progress-track: #2E2440;
-  --color-progress-fill: linear-gradient(90deg, var(--color-accent-sage), #7AAA6E, var(--color-accent-gold));
+  --color-progress-fill: linear-gradient(90deg, #AA7E2E, #D09840, #E8B858);
+  --progress-fill-fishing: linear-gradient(90deg, #7060A8, #9888C8, #B0A0D8);
+  --progress-fill-gardening: linear-gradient(90deg, #508A60, #6EA888, #8AC8A8);
+  --progress-fill-cooking: linear-gradient(90deg, #B05840, #D47058, #E89078);
+  --progress-fill-birdwatching: linear-gradient(90deg, #A87828, #D09840, #E8B858);
+  --progress-fill-insects: linear-gradient(90deg, #C05878, #E07898, #F0A0B8);
 
   --badge-sunny-bg: #2E2818;
   --badge-sunny-text: #C8A040;
@@ -233,14 +243,7 @@ h1, h2, h3, .font-display {
   to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes progressFill {
-  from { width: 0%; }
-}
 
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
 
 @keyframes celebrationBurst {
   0% {
@@ -298,10 +301,6 @@ h1, h2, h3, .font-display {
 
 .animate-star-pop {
   animation: starPop 0.4s ease-out;
-}
-
-.animate-progress-fill {
-  animation: progressFill 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 .animate-page-reveal {
@@ -551,25 +550,13 @@ h1, h2, h3, .font-display {
   border-radius: 9999px;
   background: var(--color-progress-fill);
   transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
 }
 
-.progress-bar-fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
-}
+.progress-bar-fill[data-category="fishing"] { background: var(--progress-fill-fishing); }
+.progress-bar-fill[data-category="gardening"] { background: var(--progress-fill-gardening); }
+.progress-bar-fill[data-category="cooking"] { background: var(--progress-fill-cooking); }
+.progress-bar-fill[data-category="birdwatching"] { background: var(--progress-fill-birdwatching); }
+.progress-bar-fill[data-category="insects"] { background: var(--progress-fill-insects); }
 
 /* ===== Table Enhancement ===== */
 .collection-table {
