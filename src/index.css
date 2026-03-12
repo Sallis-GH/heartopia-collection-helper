@@ -1,0 +1,625 @@
+@import "tailwindcss";
+
+/* ===== Light Theme (default) ===== */
+:root {
+  --color-bg-primary: #F7F0E6;
+  --color-bg-secondary: #F0E8D8;
+  --color-bg-card: #FFFDF7;
+  --color-bg-table-header: #F5EFE3;
+  --color-bg-table-row-alt: #FBF7EF;
+  --color-bg-table-row-caught: #EDF5EF;
+  --color-bg-hover: #F5EBD8;
+  --color-bg-input: #FFFDF7;
+
+  --color-border-primary: #D9CCBA;
+  --color-border-secondary: #E8DCC8;
+  --color-border-decorative: #C4A882;
+
+  --color-text-primary: #2C1F0F;
+  --color-text-secondary: #5A4630;
+  --color-text-muted: #8C7A62;
+
+  --color-accent-pink: #D4728C;
+  --color-accent-lavender: #9485C2;
+  --color-accent-sage: #6B9F7E;
+  --color-accent-gold: #C08B30;
+  --color-accent-coral: #C4644E;
+
+  --color-star-filled: #C08B30;
+  --color-star-empty: #D5CBBD;
+
+  --color-tab-active-bg: #FFFDF7;
+  --color-tab-active-shadow: 0 4px 12px rgba(44, 31, 15, 0.1);
+
+  --color-header-gradient: linear-gradient(160deg, #3D2B14 0%, #5A3D1E 40%, #4A2E18 100%);
+  --color-header-border: linear-gradient(90deg, var(--color-accent-gold), var(--color-accent-sage), var(--color-accent-lavender), var(--color-accent-pink));
+
+  --color-progress-track: #E0D5C4;
+  --color-progress-fill: linear-gradient(90deg, var(--color-accent-sage), #8DB87E, var(--color-accent-gold));
+
+  /* Badge colors */
+  --badge-sunny-bg: #FFF8E7;
+  --badge-sunny-text: #7A5C0A;
+  --badge-sunny-border: #E8D5A0;
+  --badge-rainy-bg: #E8EFF8;
+  --badge-rainy-text: #2B5EA7;
+  --badge-rainy-border: #B8C8E0;
+  --badge-rainbow-bg: #F2E8F8;
+  --badge-rainbow-text: #6B3FA0;
+  --badge-rainbow-border: #D0B8E8;
+
+  --badge-night-bg: #E8E8F5;
+  --badge-night-text: #3D3D7A;
+  --badge-night-border: #C0C0E0;
+  --badge-dawn-bg: #F8EFE0;
+  --badge-dawn-text: #7A5C1A;
+  --badge-dawn-border: #E0D0B0;
+  --badge-morning-bg: #F8EFE0;
+  --badge-morning-text: #7A5C1A;
+  --badge-morning-border: #E0D0B0;
+  --badge-day-bg: #E0EFF5;
+  --badge-day-text: #1A5C7A;
+  --badge-day-border: #B0D0E0;
+  --badge-afternoon-bg: #E0EFF5;
+  --badge-afternoon-text: #1A5C7A;
+  --badge-afternoon-border: #B0D0E0;
+  --badge-evening-bg: #F5E8E0;
+  --badge-evening-text: #7A3D1A;
+  --badge-evening-border: #E0C0B0;
+  --badge-allday-bg: #EDE8E0;
+  --badge-allday-text: #5A4630;
+  --badge-allday-border: #D0C4B0;
+
+  /* Garden subcategory badges */
+  --badge-vegetable-bg: #E8F0E8;
+  --badge-vegetable-text: #2D6B3F;
+  --badge-fruit-bg: #F5E0E0;
+  --badge-fruit-text: #8C2A35;
+  --badge-grain-bg: #F5EDE0;
+  --badge-grain-text: #7A5C1A;
+  --badge-flower-bg: #F5E0EC;
+  --badge-flower-text: #8C2A5C;
+  --badge-special-bg: #ECE0F5;
+  --badge-special-text: #5C2A8C;
+
+  /* Cooking category badge */
+  --badge-cooking-bg: #F5ECE0;
+  --badge-cooking-text: #7A4A1A;
+
+  /* Decorative */
+  --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  --ornament-color: rgba(192, 139, 48, 0.12);
+}
+
+/* ===== Dark Theme ===== */
+.dark {
+  --color-bg-primary: #161018;
+  --color-bg-secondary: #1E1624;
+  --color-bg-card: #241C2E;
+  --color-bg-table-header: #241C2E;
+  --color-bg-table-row-alt: #1E1626;
+  --color-bg-table-row-caught: #1A2420;
+  --color-bg-hover: #2E2440;
+  --color-bg-input: #241C2E;
+
+  --color-border-primary: #382E48;
+  --color-border-secondary: #2E2440;
+  --color-border-decorative: #4A3E5A;
+
+  --color-text-primary: #E8DFD0;
+  --color-text-secondary: #B0A090;
+  --color-text-muted: #6E5E50;
+
+  --color-accent-pink: #C4688A;
+  --color-accent-lavender: #9080B8;
+  --color-accent-sage: #6A9A78;
+  --color-accent-gold: #B88428;
+  --color-accent-coral: #BA5E48;
+
+  --color-star-filled: #B88428;
+  --color-star-empty: #3E3450;
+
+  --color-tab-active-bg: #241C2E;
+  --color-tab-active-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+
+  --color-header-gradient: linear-gradient(160deg, #1A1220 0%, #241830 40%, #1E1428 100%);
+  --color-header-border: linear-gradient(90deg, var(--color-accent-gold), var(--color-accent-sage), var(--color-accent-lavender), var(--color-accent-pink));
+
+  --color-progress-track: #2E2440;
+  --color-progress-fill: linear-gradient(90deg, var(--color-accent-sage), #7AAA6E, var(--color-accent-gold));
+
+  --badge-sunny-bg: #2E2818;
+  --badge-sunny-text: #C8A040;
+  --badge-sunny-border: #3E3828;
+  --badge-rainy-bg: #182028;
+  --badge-rainy-text: #5890C0;
+  --badge-rainy-border: #283040;
+  --badge-rainbow-bg: #241838;
+  --badge-rainbow-text: #A078C8;
+  --badge-rainbow-border: #342848;
+
+  --badge-night-bg: #1C1C34;
+  --badge-night-text: #8888C0;
+  --badge-night-border: #282848;
+  --badge-dawn-bg: #2E2818;
+  --badge-dawn-text: #C8A040;
+  --badge-dawn-border: #3E3828;
+  --badge-morning-bg: #2E2818;
+  --badge-morning-text: #C8A040;
+  --badge-morning-border: #3E3828;
+  --badge-day-bg: #182830;
+  --badge-day-text: #48A0C0;
+  --badge-day-border: #283840;
+  --badge-afternoon-bg: #182830;
+  --badge-afternoon-text: #48A0C0;
+  --badge-afternoon-border: #283840;
+  --badge-evening-bg: #2E1C18;
+  --badge-evening-text: #C06848;
+  --badge-evening-border: #402828;
+  --badge-allday-bg: #241C2E;
+  --badge-allday-text: #B0A090;
+  --badge-allday-border: #382E48;
+
+  --badge-vegetable-bg: #18281C;
+  --badge-vegetable-text: #6A9A78;
+  --badge-fruit-bg: #2E181C;
+  --badge-fruit-text: #C45868;
+  --badge-grain-bg: #2E2818;
+  --badge-grain-text: #C8A040;
+  --badge-flower-bg: #2E1824;
+  --badge-flower-text: #C46898;
+  --badge-special-bg: #241838;
+  --badge-special-text: #A078C8;
+
+  --badge-cooking-bg: #2E2018;
+  --badge-cooking-text: #C08038;
+
+  --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  --ornament-color: rgba(184, 132, 40, 0.08);
+}
+
+/* ===== Global Styles ===== */
+.no-transitions,
+.no-transitions *,
+.no-transitions *::before,
+.no-transitions *::after {
+  transition: none !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  background-image: var(--paper-grain);
+  color: var(--color-text-primary);
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+/* ===== Keyframe Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes starPop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.4); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+@keyframes rowFadeIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes celebrationBurst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(cos(var(--angle)) * var(--distance)),
+      calc(sin(var(--angle)) * var(--distance))
+    ) scale(0);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ornamentDraw {
+  from { stroke-dashoffset: 100; opacity: 0; }
+  to { stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ===== Animation Utilities ===== */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-row-fade-in {
+  animation: rowFadeIn 0.3s ease-out both;
+  animation-delay: calc(var(--row-index, 0) * 30ms);
+}
+
+.animate-star-pop {
+  animation: starPop 0.4s ease-out;
+}
+
+.animate-progress-fill {
+  animation: progressFill 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-page-reveal {
+  animation: pageReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===== Celebration Effect ===== */
+.celebration-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.celebration-particle {
+  position: absolute;
+  width: var(--size, 6px);
+  height: var(--size, 6px);
+  border-radius: 50%;
+  animation: celebrationBurst 1.2s ease-out forwards;
+}
+
+/* ===== Decorative Header ===== */
+.header-ornament {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-ornament::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 85% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ===== Storybook Cards ===== */
+.storybook-card {
+  position: relative;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 1rem;
+  box-shadow:
+    0 1px 3px rgba(44, 31, 15, 0.06),
+    0 4px 12px rgba(44, 31, 15, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+/* ===== Category Medallion ===== */
+.category-medallion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  border: 2px solid var(--color-border-decorative);
+  background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-secondary) 100%);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+
+/* ===== Badge Styles ===== */
+.badge-sunny {
+  background-color: var(--badge-sunny-bg);
+  color: var(--badge-sunny-text);
+  border: 1px solid var(--badge-sunny-border);
+}
+.badge-rainy {
+  background-color: var(--badge-rainy-bg);
+  color: var(--badge-rainy-text);
+  border: 1px solid var(--badge-rainy-border);
+}
+.badge-rainbow {
+  background-color: var(--badge-rainbow-bg);
+  color: var(--badge-rainbow-text);
+  border: 1px solid var(--badge-rainbow-border);
+}
+
+.badge-night {
+  background-color: var(--badge-night-bg);
+  color: var(--badge-night-text);
+  border: 1px solid var(--badge-night-border);
+}
+.badge-dawn {
+  background-color: var(--badge-dawn-bg);
+  color: var(--badge-dawn-text);
+  border: 1px solid var(--badge-dawn-border);
+}
+.badge-morning {
+  background-color: var(--badge-morning-bg);
+  color: var(--badge-morning-text);
+  border: 1px solid var(--badge-morning-border);
+}
+.badge-day {
+  background-color: var(--badge-day-bg);
+  color: var(--badge-day-text);
+  border: 1px solid var(--badge-day-border);
+}
+.badge-afternoon {
+  background-color: var(--badge-afternoon-bg);
+  color: var(--badge-afternoon-text);
+  border: 1px solid var(--badge-afternoon-border);
+}
+.badge-evening {
+  background-color: var(--badge-evening-bg);
+  color: var(--badge-evening-text);
+  border: 1px solid var(--badge-evening-border);
+}
+.badge-allday {
+  background-color: var(--badge-allday-bg);
+  color: var(--badge-allday-text);
+  border: 1px solid var(--badge-allday-border);
+}
+
+/* Garden subcategory badges */
+.badge-vegetable {
+  background-color: var(--badge-vegetable-bg);
+  color: var(--badge-vegetable-text);
+}
+.badge-fruit {
+  background-color: var(--badge-fruit-bg);
+  color: var(--badge-fruit-text);
+}
+.badge-grain {
+  background-color: var(--badge-grain-bg);
+  color: var(--badge-grain-text);
+}
+.badge-flower {
+  background-color: var(--badge-flower-bg);
+  color: var(--badge-flower-text);
+}
+.badge-special {
+  background-color: var(--badge-special-bg);
+  color: var(--badge-special-text);
+}
+
+/* Cooking category badge */
+.badge-cooking {
+  background-color: var(--badge-cooking-bg);
+  color: var(--badge-cooking-text);
+}
+
+/* ===== Star Price List ===== */
+.star-price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.star-price-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.1;
+}
+
+.star-price-stars {
+  display: flex;
+  align-items: center;
+  width: 56px;
+  flex-shrink: 0;
+}
+
+.star-price-amount {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Journal Divider ===== */
+.journal-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.journal-divider::before,
+.journal-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-border-decorative) 30%,
+    var(--color-border-decorative) 70%,
+    transparent 100%
+  );
+}
+
+.journal-divider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+  opacity: 0.5;
+}
+
+/* ===== Tab Bookmark Style ===== */
+.tab-bookmark {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tab-bookmark::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: var(--color-accent-gold);
+  border-radius: 1px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tab-bookmark.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.tab-bookmark:not(.active):hover {
+  background: var(--color-bg-hover);
+}
+
+/* ===== Progress Bar Enhancement ===== */
+.progress-bar-track {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: var(--color-progress-track);
+}
+
+.progress-bar-fill {
+  border-radius: 9999px;
+  background: var(--color-progress-fill);
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* ===== Table Enhancement ===== */
+.collection-table {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border-primary);
+  box-shadow: 0 2px 8px rgba(44, 31, 15, 0.04);
+}
+
+.collection-table thead th {
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.collection-table tbody tr {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ===== Scrollbar Theming ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ===== Corner Ornaments ===== */
+.corner-ornament {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+  color: var(--color-accent-gold);
+}
+
+.corner-ornament-tl {
+  top: 0;
+  left: 0;
+}
+
+.corner-ornament-br {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
