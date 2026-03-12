@@ -59,16 +59,14 @@ export function HuntGuideControls({
               <button
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
-                className="flex flex-col items-center gap-1.5 p-2.5 rounded-xl cursor-pointer"
+                className="flex flex-1 flex-col items-center gap-1.5 p-2.5 rounded-xl cursor-pointer"
                 style={{
                   backgroundColor: isActive ? 'var(--color-bg-card)' : 'var(--color-bg-secondary)',
-                  border: isActive
-                    ? `2px solid ${accent}`
-                    : '1px solid var(--color-border-secondary)',
+                  border: `2px solid ${isActive ? accent : 'var(--color-border-secondary)'}`,
                   boxShadow: isActive ? `0 2px 10px color-mix(in srgb, ${accent} 20%, transparent)` : 'none',
                   transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
                   outline: 'none',
-                  minWidth: 80,
+                  maxWidth: 120,
                 }}
               >
                 <div className="category-medallion" style={{

@@ -31,7 +31,7 @@ function CornerOrnament({ className }: { className: string }) {
 
 function HeaderDecoration() {
   return (
-    <svg className="absolute right-6 top-1/2 -translate-y-1/2 opacity-10 hidden md:block" width="160" height="60" viewBox="0 0 160 60" fill="none">
+    <svg className="absolute right-6 top-1/2 -translate-y-1/2 opacity-10 hidden md:block pointer-events-none" width="160" height="60" viewBox="0 0 160 60" fill="none">
       {/* Flowing vine */}
       <path d="M0 30 C20 10, 40 15, 60 30 C80 45, 100 20, 120 30 C135 38, 145 25, 160 30" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" fill="none" />
       {/* Leaves along vine */}

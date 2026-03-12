@@ -82,8 +82,10 @@ export function useCollectionTracker() {
     const date = new Date().toISOString().split('T')[0]
     a.href = url
     a.download = `heartopia-tracker-export-${date}.json`
+    document.body.appendChild(a)
     a.click()
-    URL.revokeObjectURL(url)
+    document.body.removeChild(a)
+    setTimeout(() => URL.revokeObjectURL(url), 100)
   }, [data])
 
   const importData = useCallback((jsonString: string): boolean => {
