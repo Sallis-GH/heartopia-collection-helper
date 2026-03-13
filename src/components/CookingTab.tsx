@@ -25,6 +25,7 @@ export function CookingTab({ caughtState, onToggleStar, progress }: CookingTabPr
       key: 'name',
       label: 'Name',
       width: '200px',
+      mobileRole: 'title' as const,
       render: (item: CookingItem) => (
         <span className="font-semibold" style={{ color: 'var(--color-text-primary)' }}>{item.name}</span>
       ),
@@ -33,6 +34,7 @@ export function CookingTab({ caughtState, onToggleStar, progress }: CookingTabPr
       key: 'category',
       label: 'Category',
       width: '100px',
+      mobileRole: 'badge' as const,
       render: (item: CookingItem) => (
         <span className="badge-cooking px-2 py-0.5 rounded-full text-xs font-semibold">
           {item.category}
@@ -43,6 +45,7 @@ export function CookingTab({ caughtState, onToggleStar, progress }: CookingTabPr
       key: 'level',
       label: 'Level',
       width: '70px',
+      mobileRole: 'badge' as const,
       render: (item: CookingItem) => (
         <span className="font-semibold" style={{ color: 'var(--color-text-secondary)' }}>Lv.{item.level}</span>
       ),
@@ -51,6 +54,7 @@ export function CookingTab({ caughtState, onToggleStar, progress }: CookingTabPr
       key: 'recipePrice',
       label: 'Recipe',
       width: '90px',
+      mobileRole: 'field' as const,
       render: (item: CookingItem) => (
         <span style={{ color: 'var(--color-text-secondary)' }}>
           {item.recipePrice ? `${item.recipePrice}G` : 'Free'}
@@ -62,6 +66,7 @@ export function CookingTab({ caughtState, onToggleStar, progress }: CookingTabPr
       label: 'Sell Prices',
       sortable: false,
       width: '200px',
+      mobileHidden: true,
       render: (item: CookingItem) => <StarPriceDisplay prices={item.starPrices} suffix="G" />,
     },
     {
@@ -69,12 +74,14 @@ export function CookingTab({ caughtState, onToggleStar, progress }: CookingTabPr
       label: 'Energy',
       sortable: false,
       width: '150px',
+      mobileHidden: true,
       render: (item: CookingItem) => <StarPriceDisplay prices={item.energy} prefix="+" />,
     },
     {
       key: 'caught',
       label: 'Cooked',
       width: '130px',
+      mobileRole: 'action' as const,
       render: (_item: CookingItem, caught: boolean[], onToggle: (star: number) => void) => (
         <StarRating stars={caught} onToggle={onToggle} />
       ),

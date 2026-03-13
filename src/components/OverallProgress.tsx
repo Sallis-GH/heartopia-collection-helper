@@ -17,7 +17,7 @@ export function OverallProgress({ progress, categoryProgress, activeTab, onTabCh
   const overallPct = progress.total > 0 ? Math.round((progress.caught / progress.total) * 100) : 0
 
   return (
-    <div className="storybook-card p-6">
+    <div className="storybook-card p-4 sm:p-6">
       {/* Title row */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-bold flex items-center gap-2" style={{ color: 'var(--color-text-primary)' }}>
@@ -50,7 +50,7 @@ export function OverallProgress({ progress, categoryProgress, activeTab, onTabCh
             <button
               key={cat}
               onClick={() => onTabChange(cat)}
-              className="flex flex-col items-center gap-2 p-3 rounded-xl cursor-pointer"
+              className="hobby-card flex flex-col items-center gap-2 p-3 rounded-xl cursor-pointer"
               style={{
                 backgroundColor: isActive ? 'var(--color-bg-card)' : 'var(--color-bg-secondary)',
                 border: isActive
@@ -61,7 +61,8 @@ export function OverallProgress({ progress, categoryProgress, activeTab, onTabCh
                 boxShadow: isActive ? `0 2px 10px color-mix(in srgb, ${accent} 20%, transparent)` : 'none',
                 transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
                 outline: 'none',
-              }}
+                '--hobby-accent': accent,
+              } as React.CSSProperties}
             >
               <div className="category-medallion" style={{
                 borderColor: isActive ? accent : pct >= 1 ? accent : 'var(--color-border-decorative)',

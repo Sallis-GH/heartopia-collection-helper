@@ -98,91 +98,93 @@
 
 /* ===== Dark Theme ===== */
 .dark {
-  --color-bg-primary: #161018;
-  --color-bg-secondary: #1E1624;
-  --color-bg-card: #241C2E;
-  --color-bg-table-header: #241C2E;
-  --color-bg-table-row-alt: #1E1626;
-  --color-bg-table-row-caught: #1A2420;
-  --color-bg-hover: #2E2440;
-  --color-bg-input: #241C2E;
+  /* Warm-brown tinted backgrounds (matches light theme's parchment warmth) */
+  --color-bg-primary: #131210;
+  --color-bg-secondary: #1B1916;
+  --color-bg-card: #221F1B;
+  --color-bg-table-header: #221F1B;
+  --color-bg-table-row-alt: #1E1B18;
+  --color-bg-table-row-caught: #1C2018;
+  --color-bg-hover: #2C2822;
+  --color-bg-input: #221F1B;
 
-  --color-border-primary: #382E48;
-  --color-border-secondary: #2E2440;
-  --color-border-decorative: #4A3E5A;
+  --color-border-primary: #36322C;
+  --color-border-secondary: #2C2822;
+  --color-border-decorative: #48423A;
 
   --color-text-primary: #E8DFD0;
   --color-text-secondary: #B0A090;
-  --color-text-muted: #6E5E50;
+  --color-text-muted: #6E6050;
 
-  --color-accent-pink: #C4688A;
-  --color-accent-lavender: #9080B8;
-  --color-accent-sage: #6A9A78;
-  --color-accent-gold: #B88428;
-  --color-accent-coral: #BA5E48;
+  /* Lightened + slightly desaturated accents for dark mode */
+  --color-accent-pink: #D48EA4;
+  --color-accent-lavender: #A89CC8;
+  --color-accent-sage: #88B898;
+  --color-accent-gold: #CCA050;
+  --color-accent-coral: #CC8070;
 
-  --color-star-filled: #B88428;
-  --color-star-empty: #3E3450;
+  --color-star-filled: #CCA050;
+  --color-star-empty: #3A3630;
 
-  --color-tab-active-bg: #241C2E;
+  --color-tab-active-bg: #221F1B;
   --color-tab-active-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 
-  --color-header-gradient: linear-gradient(160deg, #1A1220 0%, #241830 40%, #1E1428 100%);
+  --color-header-gradient: linear-gradient(160deg, #161412 0%, #201C18 40%, #1A1814 100%);
   --color-header-border: linear-gradient(90deg, var(--color-accent-gold), var(--color-accent-sage), var(--color-accent-lavender), var(--color-accent-pink));
 
-  --color-progress-track: #2E2440;
-  --color-progress-fill: linear-gradient(90deg, #AA7E2E, #D09840, #E8B858);
-  --progress-fill-fishing: linear-gradient(90deg, #7060A8, #9888C8, #B0A0D8);
-  --progress-fill-gardening: linear-gradient(90deg, #508A60, #6EA888, #8AC8A8);
-  --progress-fill-cooking: linear-gradient(90deg, #B05840, #D47058, #E89078);
-  --progress-fill-birdwatching: linear-gradient(90deg, #A87828, #D09840, #E8B858);
-  --progress-fill-insects: linear-gradient(90deg, #C05878, #E07898, #F0A0B8);
+  --color-progress-track: #2C2822;
+  --color-progress-fill: linear-gradient(90deg, #B8922E, #D0A040, #E8B858);
+  --progress-fill-fishing: linear-gradient(90deg, #8878B8, #A89CC8, #C0B4D8);
+  --progress-fill-gardening: linear-gradient(90deg, #68A078, #88B898, #A0D0B0);
+  --progress-fill-cooking: linear-gradient(90deg, #C07060, #D88878, #E8A090);
+  --progress-fill-birdwatching: linear-gradient(90deg, #B89030, #D0A848, #E8C060);
+  --progress-fill-insects: linear-gradient(90deg, #D07890, #E098B0, #F0B0C4);
 
-  --badge-sunny-bg: #2E2818;
-  --badge-sunny-text: #C8A040;
-  --badge-sunny-border: #3E3828;
-  --badge-rainy-bg: #182028;
-  --badge-rainy-text: #5890C0;
-  --badge-rainy-border: #283040;
-  --badge-rainbow-bg: #241838;
-  --badge-rainbow-text: #A078C8;
-  --badge-rainbow-border: #342848;
+  --badge-sunny-bg: #282418;
+  --badge-sunny-text: #CCA850;
+  --badge-sunny-border: #383020;
+  --badge-rainy-bg: #181E24;
+  --badge-rainy-text: #6898C0;
+  --badge-rainy-border: #242E38;
+  --badge-rainbow-bg: #221C28;
+  --badge-rainbow-text: #B090D0;
+  --badge-rainbow-border: #302838;
 
-  --badge-night-bg: #1C1C34;
-  --badge-night-text: #8888C0;
-  --badge-night-border: #282848;
-  --badge-dawn-bg: #2E2818;
-  --badge-dawn-text: #C8A040;
-  --badge-dawn-border: #3E3828;
-  --badge-morning-bg: #2E2818;
-  --badge-morning-text: #C8A040;
-  --badge-morning-border: #3E3828;
-  --badge-day-bg: #182830;
-  --badge-day-text: #48A0C0;
-  --badge-day-border: #283840;
-  --badge-afternoon-bg: #182830;
-  --badge-afternoon-text: #48A0C0;
-  --badge-afternoon-border: #283840;
-  --badge-evening-bg: #2E1C18;
-  --badge-evening-text: #C06848;
-  --badge-evening-border: #402828;
-  --badge-allday-bg: #241C2E;
+  --badge-night-bg: #1A1C28;
+  --badge-night-text: #9098C0;
+  --badge-night-border: #262838;
+  --badge-dawn-bg: #282418;
+  --badge-dawn-text: #CCA850;
+  --badge-dawn-border: #383020;
+  --badge-morning-bg: #282418;
+  --badge-morning-text: #CCA850;
+  --badge-morning-border: #383020;
+  --badge-day-bg: #182028;
+  --badge-day-text: #58A8C8;
+  --badge-day-border: #243038;
+  --badge-afternoon-bg: #182028;
+  --badge-afternoon-text: #58A8C8;
+  --badge-afternoon-border: #243038;
+  --badge-evening-bg: #281E18;
+  --badge-evening-text: #C87858;
+  --badge-evening-border: #382420;
+  --badge-allday-bg: #221F1B;
   --badge-allday-text: #B0A090;
-  --badge-allday-border: #382E48;
+  --badge-allday-border: #36322C;
 
-  --badge-vegetable-bg: #18281C;
-  --badge-vegetable-text: #6A9A78;
-  --badge-fruit-bg: #2E181C;
-  --badge-fruit-text: #C45868;
-  --badge-grain-bg: #2E2818;
-  --badge-grain-text: #C8A040;
-  --badge-flower-bg: #2E1824;
-  --badge-flower-text: #C46898;
-  --badge-special-bg: #241838;
-  --badge-special-text: #A078C8;
+  --badge-vegetable-bg: #1A2218;
+  --badge-vegetable-text: #80B090;
+  --badge-fruit-bg: #281A1C;
+  --badge-fruit-text: #D07078;
+  --badge-grain-bg: #282418;
+  --badge-grain-text: #CCA850;
+  --badge-flower-bg: #281A22;
+  --badge-flower-text: #D080A0;
+  --badge-special-bg: #221C28;
+  --badge-special-text: #B090D0;
 
-  --badge-cooking-bg: #2E2018;
-  --badge-cooking-text: #C08038;
+  --badge-cooking-bg: #282018;
+  --badge-cooking-text: #C89048;
 
   --paper-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   --ornament-color: rgba(184, 132, 40, 0.08);
@@ -369,6 +371,13 @@ h1, h2, h3, .font-display {
   background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-secondary) 100%);
   box-shadow: inset 0 1px 2px rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.06);
   flex-shrink: 0;
+}
+
+/* ===== Hobby Card Hover ===== */
+.hobby-card:not(:active):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--hobby-accent) 18%, transparent) !important;
+  border-color: color-mix(in srgb, var(--hobby-accent) 50%, var(--color-border-secondary)) !important;
 }
 
 /* ===== Badge Styles ===== */

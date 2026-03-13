@@ -88,7 +88,7 @@ function App() {
         borderImage: 'var(--color-header-border)',
         borderImageSlice: 1,
       }}>
-        <div className="max-w-[1400px] mx-auto px-5 py-4">
+        <div className="max-w-[1400px] mx-auto px-3 py-3 sm:px-5 sm:py-4">
           <div className="flex items-center justify-between gap-4 flex-wrap relative">
             <div className="flex items-center gap-3">
               {/* Heart emblem */}
@@ -111,7 +111,7 @@ function App() {
                 <h1 className="text-xl font-bold tracking-tight" style={{ color: '#FFFDF7', textShadow: '0 1px 3px rgba(0,0,0,0.2)' }}>
                   Heartopia
                 </h1>
-                <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'Nunito, sans-serif', letterSpacing: '0.15em' }}>
+                <span className="hidden sm:block text-xs font-semibold tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'Nunito, sans-serif', letterSpacing: '0.15em' }}>
                   Collection Tracker
                 </span>
               </div>
@@ -154,7 +154,7 @@ function App() {
       </header>
 
       {/* Main content */}
-      <main className="max-w-[1400px] mx-auto px-5 py-6 space-y-6 relative z-[1]">
+      <main className="max-w-[1400px] mx-auto px-3 py-4 sm:px-5 sm:py-6 space-y-6 relative z-[1]">
         {activeView === 'tracker' ? (
           <>
             <div className="animate-page-reveal">

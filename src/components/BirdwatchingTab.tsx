@@ -27,6 +27,7 @@ export function BirdwatchingTab({ caughtState, onToggleStar, progress }: Birdwat
       key: 'name',
       label: 'Name',
       width: '200px',
+      mobileRole: 'title' as const,
       render: (item: BirdItem) => (
         <span className="font-semibold" style={{ color: 'var(--color-text-primary)' }}>{item.name}</span>
       ),
@@ -35,6 +36,7 @@ export function BirdwatchingTab({ caughtState, onToggleStar, progress }: Birdwat
       key: 'location',
       label: 'Location',
       width: '200px',
+      mobileRole: 'field' as const,
       render: (item: BirdItem) => (
         <span style={{ color: 'var(--color-text-secondary)' }}>{item.location}</span>
       ),
@@ -44,6 +46,7 @@ export function BirdwatchingTab({ caughtState, onToggleStar, progress }: Birdwat
       label: 'Weather',
       sortable: false,
       width: '200px',
+      mobileRole: 'field' as const,
       render: (item: BirdItem) => <WeatherBadge weather={item.weather} />,
     },
     {
@@ -51,12 +54,14 @@ export function BirdwatchingTab({ caughtState, onToggleStar, progress }: Birdwat
       label: 'Time',
       sortable: false,
       width: '160px',
+      mobileRole: 'field' as const,
       render: (item: BirdItem) => <TimeOfDayBadge times={item.time} />,
     },
     {
       key: 'level',
       label: 'Level',
       width: '70px',
+      mobileRole: 'badge' as const,
       render: (item: BirdItem) => (
         <span className="font-semibold" style={{ color: 'var(--color-text-secondary)' }}>Lv.{item.level}</span>
       ),
@@ -66,12 +71,14 @@ export function BirdwatchingTab({ caughtState, onToggleStar, progress }: Birdwat
       label: 'Star Prices',
       sortable: false,
       width: '180px',
+      mobileHidden: true,
       render: (item: BirdItem) => <StarPriceDisplay prices={item.starPrices} />,
     },
     {
       key: 'caught',
       label: 'Spotted',
       width: '130px',
+      mobileRole: 'action' as const,
       render: (_item: BirdItem, caught: boolean[], onToggle: (star: number) => void) => (
         <StarRating stars={caught} onToggle={onToggle} />
       ),

@@ -27,6 +27,7 @@ export function InsectsTab({ caughtState, onToggleStar, progress }: InsectsTabPr
       key: 'name',
       label: 'Name',
       width: '200px',
+      mobileRole: 'title' as const,
       render: (item: InsectItem) => (
         <span className="font-semibold" style={{ color: 'var(--color-text-primary)' }}>{item.name}</span>
       ),
@@ -35,6 +36,7 @@ export function InsectsTab({ caughtState, onToggleStar, progress }: InsectsTabPr
       key: 'location',
       label: 'Location',
       width: '200px',
+      mobileRole: 'field' as const,
       render: (item: InsectItem) => (
         <span style={{ color: 'var(--color-text-secondary)' }}>{item.location}</span>
       ),
@@ -44,6 +46,7 @@ export function InsectsTab({ caughtState, onToggleStar, progress }: InsectsTabPr
       label: 'Weather',
       sortable: false,
       width: '200px',
+      mobileRole: 'field' as const,
       render: (item: InsectItem) => <WeatherBadge weather={item.weather} />,
     },
     {
@@ -51,12 +54,14 @@ export function InsectsTab({ caughtState, onToggleStar, progress }: InsectsTabPr
       label: 'Time',
       sortable: false,
       width: '200px',
+      mobileRole: 'field' as const,
       render: (item: InsectItem) => <TimeOfDayBadge times={item.time} />,
     },
     {
       key: 'level',
       label: 'Level',
       width: '70px',
+      mobileRole: 'badge' as const,
       render: (item: InsectItem) => (
         <span className="font-semibold" style={{ color: 'var(--color-text-secondary)' }}>Lv.{item.level}</span>
       ),
@@ -66,12 +71,14 @@ export function InsectsTab({ caughtState, onToggleStar, progress }: InsectsTabPr
       label: 'Star Prices',
       sortable: false,
       width: '180px',
+      mobileHidden: true,
       render: (item: InsectItem) => <StarPriceDisplay prices={item.starPrices} />,
     },
     {
       key: 'caught',
       label: 'Caught',
       width: '130px',
+      mobileRole: 'action' as const,
       render: (_item: InsectItem, caught: boolean[], onToggle: (star: number) => void) => (
         <StarRating stars={caught} onToggle={onToggle} />
       ),

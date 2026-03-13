@@ -59,7 +59,7 @@ export function HuntGuideControls({
               <button
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
-                className="flex flex-1 flex-col items-center gap-1.5 p-2.5 rounded-xl cursor-pointer"
+                className="flex flex-1 flex-col items-center gap-1.5 p-2 sm:p-2.5 rounded-xl cursor-pointer"
                 style={{
                   backgroundColor: isActive ? 'var(--color-bg-card)' : 'var(--color-bg-secondary)',
                   border: `2px solid ${isActive ? accent : 'var(--color-border-secondary)'}`,
@@ -169,7 +169,7 @@ export function HuntGuideControls({
         </div>
 
         {/* Hobby level + caught filter row */}
-        <div className="flex flex-wrap items-end gap-6">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-end gap-4 sm:gap-6">
           {/* Hobby level */}
           <div className="flex flex-col gap-2">
             <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--color-text-muted)' }}>

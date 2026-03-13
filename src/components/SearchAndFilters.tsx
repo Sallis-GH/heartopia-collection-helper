@@ -89,6 +89,7 @@ function MultiSelect({ label, options, selected, onToggle }: MultiSelectProps) {
             border: '1px solid var(--color-border-primary)',
             boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
             minWidth: '170px',
+            maxWidth: 'calc(100vw - 2rem)',
             maxHeight: '240px',
           }}
         >
@@ -200,6 +201,7 @@ function SingleSelect<T extends string>({ label, options, value, onChange }: Sin
             border: '1px solid var(--color-border-primary)',
             boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
             minWidth: '140px',
+            maxWidth: 'calc(100vw - 2rem)',
           }}
         >
           {options.map(opt => {
@@ -263,7 +265,7 @@ export function SearchAndFilters({
     filters.times.length > 0 || filters.levels.length > 0 || filters.caught !== 'all' || filters.subcategories.length > 0
 
   return (
-    <div className="storybook-card flex flex-wrap gap-3 items-center p-4">
+    <div className="storybook-card flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:items-center p-4">
       <div className="relative">
         <span
           className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
@@ -278,7 +280,7 @@ export function SearchAndFilters({
           onChange={e => update({ search: e.target.value })}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className="min-w-[180px]"
+          className="w-full sm:min-w-[180px] sm:w-auto"
           style={{
             ...inputStyle,
             paddingLeft: '2.25rem',

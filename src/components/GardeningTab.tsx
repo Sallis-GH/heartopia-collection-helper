@@ -26,6 +26,7 @@ export function GardeningTab({ caughtState, onToggleStar, progress }: GardeningT
       key: 'name',
       label: 'Name',
       width: '160px',
+      mobileRole: 'title' as const,
       render: (item: GardenItem) => (
         <span className="font-semibold" style={{ color: 'var(--color-text-primary)' }}>{item.name}</span>
       ),
@@ -34,6 +35,7 @@ export function GardeningTab({ caughtState, onToggleStar, progress }: GardeningT
       key: 'subcategory',
       label: 'Type',
       width: '110px',
+      mobileRole: 'badge' as const,
       render: (item: GardenItem) => (
         <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${SUBCAT_COLORS[item.subcategory] || ''}`}>
           {item.subcategory}
@@ -44,6 +46,7 @@ export function GardeningTab({ caughtState, onToggleStar, progress }: GardeningT
       key: 'level',
       label: 'Level',
       width: '70px',
+      mobileRole: 'badge' as const,
       render: (item: GardenItem) => (
         <span className="font-semibold" style={{ color: 'var(--color-text-secondary)' }}>Lv.{item.level}</span>
       ),
@@ -52,6 +55,7 @@ export function GardeningTab({ caughtState, onToggleStar, progress }: GardeningT
       key: 'growthTime',
       label: 'Growth Time',
       width: '120px',
+      mobileRole: 'field' as const,
       render: (item: GardenItem) => (
         <span style={{ color: 'var(--color-text-secondary)' }}>{item.growthTime}</span>
       ),
@@ -60,6 +64,7 @@ export function GardeningTab({ caughtState, onToggleStar, progress }: GardeningT
       key: 'seedPrice',
       label: 'Seed Price',
       width: '100px',
+      mobileRole: 'field' as const,
       render: (item: GardenItem) => (
         <span style={{ color: 'var(--color-text-secondary)' }}>{item.seedPrice}G</span>
       ),
@@ -69,12 +74,14 @@ export function GardeningTab({ caughtState, onToggleStar, progress }: GardeningT
       label: 'Star Prices',
       sortable: false,
       width: '220px',
+      mobileHidden: true,
       render: (item: GardenItem) => <StarPriceDisplay prices={item.starPrices} suffix="G" />,
     },
     {
       key: 'caught',
       label: 'Collected',
       width: '130px',
+      mobileRole: 'action' as const,
       render: (_item: GardenItem, caught: boolean[], onToggle: (star: number) => void) => (
         <StarRating stars={caught} onToggle={onToggle} />
       ),
