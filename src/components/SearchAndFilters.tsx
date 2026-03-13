@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
-import type { FilterState, CaughtFilter, Weather, TimeOfDay } from '../types'
+import type { FilterState, Weather, TimeOfDay } from '../types'
 import { SearchIcon } from './Icons'
 
 interface SearchAndFiltersProps {
@@ -138,6 +138,96 @@ function MultiSelect({ label, options, selected, onToggle }: MultiSelectProps) {
   )
 }
 
+interface SingleSelectProps<T extends string> {
+  label: string
+  options: { value: T; label: string }[]
+  value: T
+  onChange: (value: T) => void
+}
+
+function SingleSelect<T extends string>({ label, options, value, onChange }: SingleSelectProps<T>) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  const handleClickOutside = useCallback((e: MouseEvent) => {
+    if (ref.current && !ref.current.contains(e.target as Node)) {
+      setOpen(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [open, handleClickOutside])
+
+  const selectedOption = options.find(o => o.value === value)
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="cursor-pointer flex items-center gap-1.5 text-sm font-semibold"
+        style={{
+          ...inputStyle,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
+          cursor: 'pointer',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        <span style={{ color: value !== options[0]?.value ? 'var(--color-text-primary)' : 'var(--color-text-muted)' }}>
+          {selectedOption?.label ?? label}
+        </span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+          style={{
+            color: 'var(--color-text-muted)',
+            transform: open ? 'rotate(180deg)' : 'none',
+            transition: 'transform 0.2s',
+          }}
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+
+      {open && (
+        <div
+          className="absolute z-20 mt-1 py-1 rounded-xl overflow-y-auto animate-fade-in"
+          style={{
+            backgroundColor: 'var(--color-bg-card)',
+            border: '1px solid var(--color-border-primary)',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+            minWidth: '140px',
+          }}
+        >
+          {options.map(opt => {
+            const active = opt.value === value
+            return (
+              <button
+                key={opt.value}
+                onClick={() => { onChange(opt.value); setOpen(false) }}
+                className="w-full text-left px-3 py-1.5 text-sm cursor-pointer"
+                style={{
+                  backgroundColor: active ? 'color-mix(in srgb, var(--color-accent-gold) 12%, transparent)' : 'transparent',
+                  color: active ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  fontWeight: active ? 600 : 400,
+                  border: 'none',
+                }}
+                onMouseEnter={e => { if (!active) e.currentTarget.style.backgroundColor = 'var(--color-bg-hover)' }}
+                onMouseLeave={e => { e.currentTarget.style.backgroundColor = active ? 'color-mix(in srgb, var(--color-accent-gold) 12%, transparent)' : 'transparent' }}
+              >
+                {opt.label}
+              </button>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export function SearchAndFilters({
   filters,
   onFiltersChange,
@@ -241,18 +331,17 @@ export function SearchAndFilters({
         />
       )}
 
-      <select
+      <SingleSelect
+        label="All Status"
         value={filters.caught}
-        onChange={e => update({ caught: e.target.value as CaughtFilter })}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        style={{ ...inputStyle, cursor: 'pointer' }}
-      >
-        <option value="all">All Status</option>
-        <option value="caught">Complete</option>
-        <option value="partial">Partial</option>
-        <option value="uncaught">Uncaught</option>
-      </select>
+        onChange={v => update({ caught: v })}
+        options={[
+          { value: 'all', label: 'All Status' },
+          { value: 'caught', label: 'Complete' },
+          { value: 'partial', label: 'Partial' },
+          { value: 'uncaught', label: 'Uncaught' },
+        ]}
+      />
 
       {hasFilters && (
         <button
