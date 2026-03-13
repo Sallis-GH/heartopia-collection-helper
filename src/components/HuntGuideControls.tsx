@@ -59,7 +59,7 @@ export function HuntGuideControls({
               <button
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
-                className="flex flex-1 flex-col items-center gap-1.5 p-2 sm:p-2.5 rounded-xl cursor-pointer"
+                className="hobby-card flex flex-1 flex-col items-center gap-1.5 p-2 sm:p-2.5 rounded-xl cursor-pointer"
                 style={{
                   backgroundColor: isActive ? 'var(--color-bg-card)' : 'var(--color-bg-secondary)',
                   border: `2px solid ${isActive ? accent : 'var(--color-border-secondary)'}`,
@@ -67,7 +67,8 @@ export function HuntGuideControls({
                   transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
                   outline: 'none',
                   maxWidth: 120,
-                }}
+                  '--hobby-accent': accent,
+                } as React.CSSProperties}
               >
                 <div className="category-medallion" style={{
                   borderColor: isActive ? accent : 'var(--color-border-decorative)',
